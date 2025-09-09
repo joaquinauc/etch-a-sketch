@@ -12,10 +12,13 @@ function generateGrid(numberOfSquares)
         const square = document.createElement("div");
         square.classList.add("square");
 
-        const rgbColors = randomizeRGB();
-
-        square.setAttribute("style", `height: ${squareSize}px; width: ${squareSize}px; background-color: rgb(${rgbColors[0]}, ${rgbColors[1]}, ${rgbColors[2]});`);
+        square.setAttribute("style", `height: ${squareSize}px; width: ${squareSize}px;`);
         gridContainer.appendChild(square);
+
+        square.addEventListener("mouseover", () => {
+            const rgbColors = randomizeRGB();
+            square.setAttribute("style", `height: ${squareSize}px; width: ${squareSize}px; background-color: rgb(${rgbColors[0]}, ${rgbColors[1]}, ${rgbColors[2]});`)
+        });
     }
 }
 
