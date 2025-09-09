@@ -58,7 +58,8 @@ buttonReference.addEventListener("click", () => {
         gridContainer.removeChild(gridContainer.lastChild);
     }
     
-    let gridSize = prompt("The grid size is n x n, enter n: ");
+    let gridSize = prompt("The grid size is n x n, enter n (Default = 16): ");
+    if (!gridSize) gridSize = 16;
     generateGrid(Math.floor(Number(gridSize)));
 });
 
