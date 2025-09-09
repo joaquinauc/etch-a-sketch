@@ -1,4 +1,5 @@
 const GRID_WIDTH = 960;
+const MAX_RGB_NUMBER = 256;
 
 function generateGrid(numberOfSquares)
 {   
@@ -18,6 +19,20 @@ function generateGrid(numberOfSquares)
 function calculateSquareSize(numberOfSquares)
 {
     return Math.floor(GRID_WIDTH / numberOfSquares);
+}
+
+function randomizeRGB()
+{
+    const red = randomRGBNumber();
+    const green = randomRGBNumber();
+    const blue = randomRGBNumber();
+
+    return [red, green, blue];
+}
+
+function randomRGBNumber()
+{
+    return Math.floor(Math.random() * MAX_RGB_NUMBER);
 }
 
 generateGrid(16);
