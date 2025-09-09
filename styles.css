@@ -28,3 +28,11 @@ button {
     padding: 15px;
     font-size: 1.2rem;
 }
+
+button:hover {
+    cursor: pointer;
+}
+
+button:active {
+    background-color: #0e7ccb;
+}
