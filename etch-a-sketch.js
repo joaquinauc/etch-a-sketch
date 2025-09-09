@@ -59,6 +59,11 @@ buttonReference.addEventListener("click", () => {
     }
     
     let gridSize = prompt("The grid size is n x n, enter n (Default = 16): ");
+    if (gridSize > 100)
+    {
+        gridSize = 100;
+        alert("Grid size is maxed to 100")
+    }
     if (!gridSize) gridSize = 16;
     generateGrid(Math.floor(Number(gridSize)));
 });
