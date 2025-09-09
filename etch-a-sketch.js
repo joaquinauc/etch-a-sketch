@@ -12,12 +12,17 @@ function generateGrid(numberOfSquares)
         const square = document.createElement("div");
         square.classList.add("square");
 
-        square.setAttribute("style", `height: ${squareSize}px; width: ${squareSize}px;`);
+        square.setAttribute("style", `height: ${squareSize}px; width: ${squareSize}px; opacity: 0`);
         gridContainer.appendChild(square);
 
+        let opacity = 0;
+
         square.addEventListener("mouseover", () => {
+            opacity = darkenSquare(opacity);
             const rgbColors = randomizeRGB();
-            square.setAttribute("style", `height: ${squareSize}px; width: ${squareSize}px; background-color: rgb(${rgbColors[0]}, ${rgbColors[1]}, ${rgbColors[2]});`)
+            square.setAttribute("style", `height: ${squareSize}px; width: ${squareSize}px; 
+                background-color: rgb(${rgbColors[0]}, ${rgbColors[1]}, ${rgbColors[2]}); 
+                opacity: ${opacity}`);
         });
     }
 }
@@ -39,6 +44,11 @@ function randomizeRGB()
 function randomRGBNumber()
 {
     return Math.floor(Math.random() * MAX_RGB_NUMBER);
+}
+
+function darkenSquare(opacity)
+{
+    return opacity + 0.1;
 }
 
 generateGrid(16);
