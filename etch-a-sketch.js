@@ -5,8 +5,6 @@ function generateGrid(numberOfSquares)
 {   
     const squareSize = calculateSquareSize(numberOfSquares);
 
-    const gridContainer = document.querySelector(".container")
-    
     for (let i = 0; i < (numberOfSquares**2); i++)
     {
         const square = document.createElement("div");
@@ -50,5 +48,18 @@ function darkenSquare(opacity)
 {
     return opacity + 0.1;
 }
+
+const gridContainer = document.querySelector(".container")
+
+const buttonReference = document.querySelector("button");
+buttonReference.addEventListener("click", () => {
+    while (gridContainer.firstChild)
+    {
+        gridContainer.removeChild(gridContainer.lastChild);
+    }
+    
+    let gridSize = prompt("The grid size is n x n, enter n: ");
+    generateGrid(Math.floor(Number(gridSize)));
+});
 
 generateGrid(16);
