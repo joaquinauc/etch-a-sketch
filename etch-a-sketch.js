@@ -1,4 +1,4 @@
-const GRID_WIDTH = 960;
+const GRID_WIDTH = 560;
 const MAX_RGB_NUMBER = 256;
 
 function generateGrid(numberOfSquares)
